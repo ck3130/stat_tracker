@@ -7,11 +7,11 @@ export const usePlayers = () => useContext(PlayerContext);
 export default function PlayerProvider ({ children }) {
     const [players, setPlayers] = useState(playerData);
 
-    const plusOne = (number) => setPlayers(
-        players.map(player => (player.number === number ? {...player, shots:player.shots+1 } : player)));
+    const plusOne = (number, stat) => setPlayers(
+        players.map(player => (player.number === number ? {...player, [stat]:player[stat]+1 } : player)));
     
-    const minusOne = (number) => setPlayers(
-        players.map(player => (player.number === number ? {...player, shots:player.shots-1} : player))
+    const minusOne = (number, stat) => setPlayers(
+        players.map(player => (player.number === number ? {...player, [stat]:player[stat]-1} : player))
     )
     
     return(

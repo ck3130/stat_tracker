@@ -11,7 +11,8 @@ export default function Player() {
             <tr key={i}>
                 <td>{player.first} {player.last}</td>
                 <td>{player.number}</td>
-                <StatCell key={i} {...player}/>
+                <StatCell key={i} number={player.number} stat_state={player.shots} stat="shots"/>
+                <StatCell key={i} number={player.number} stat_state={player.turnovers} stat="turnovers"/>
             </tr>
         )}
         </>

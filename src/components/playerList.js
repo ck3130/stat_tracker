@@ -20,6 +20,9 @@ export default function PlayerList () {
                         <th>
                             Shots
                         </th>
+                        <th>
+                            Turnovers
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
