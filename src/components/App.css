@@ -1,0 +1,52 @@
+* {
+    margin: .5em;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+body {
+    font-size: 100%;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: .2em .7em;
+    text-align: left;
+    vertical-align: center;
+}
+
+thead {
+    background-color: goldenrod;
+}
+
+button.increment {
+    border: 1px black solid;
+    color: white;
+    border-radius: 2px;
+    font-size:75%;
+    font-weight: bold;
+    line-height: 0%;
+    height: 1.2em;
+    width: 2.5em;
+}
+
+button.minus {
+    background-color: firebrick;
+    
+}
+
+button.plus {
+    background-color: seagreen;
+}
+
+button.plus:hover {
+    background-color: darkgreen;
+}
+
+button.minus:hover {
+    background-color: darkred;
+}
