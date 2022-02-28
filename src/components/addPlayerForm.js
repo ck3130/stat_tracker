@@ -19,11 +19,11 @@ export default function AddPlayerForm(){
 
     return(
         <form className='addPlayerForm' onSubmit={submit}>
-            <label for="firstName">First Name</label>
+            <label htmlFor="firstName">First Name</label>
             <input {...firstNameProps} type="text" id="firstName"/><br/>
-            <label for="lastName">Last Name</label>
+            <label htmlFor="lastName">Last Name</label>
             <input {...lastNameProps} type="text" id="lastName"/><br/>
-            <label for="playerNumber">Number</label>
+            <label htmlFor="playerNumber">Number</label>
             <input {...playerNumberProps} type="text" id="playerNumber"/>
             <button className="submitNewPlayer">Enter</button>
         </form>

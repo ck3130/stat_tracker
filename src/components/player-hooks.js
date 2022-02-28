@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect, useMemo, useCallback } from "react";
 import playerData from "../../data/players.json";
 import statOptions from "../../data/statOptions.json";
 
@@ -16,20 +16,35 @@ export default function PlayerProvider ({ children }) {
         players.map(player => (player.number === number ? {...player, [stat]:player[stat]-1} : player))
     );
 
+    const addStatToPlayers = () => setPlayers(
+        players.map(player => ({...player, ...statObjBuilder()}))
+    )
+
+    const statObjBuilder = () => {
+        const statObj = {}
+        for (let stat of stats) {
+        statObj[stat] = 0
+    } return statObj
+};
+
     const addPlayer = (first, last, number) =>
     setPlayers([
         ...players,
         {
             first,
             last,
-            number,
-            shots:0,
-            turnovers:0
+            number
         }
     ]);
+
+    const playerList = useMemo(() => players.length, [players])
+
+    useEffect(() => {
+        addStatToPlayers();
+    }, [playerList]);
     
     return(
-        <PlayerContext.Provider value={{ players, setPlayers, stats, setStats, plusOne, minusOne, addPlayer }}>
+        <PlayerContext.Provider value={{ players, setPlayers, stats, setStats, plusOne, minusOne, addPlayer, addStatToPlayers }}>
             { children }
         </PlayerContext.Provider> 
     );

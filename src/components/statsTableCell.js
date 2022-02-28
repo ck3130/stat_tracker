@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./App.css"
 import { usePlayers } from "./player-hooks.js";
 
-export default function StatCell({stat_state, number, stat}) {
-    const { plusOne, minusOne } = usePlayers();
+export default function StatCell({player}) {
+    const { plusOne, minusOne, stats } = usePlayers();
     return (
+        <>
+        {stats.map(stat => 
         <td>
-            <button className="increment minus" onClick={() => minusOne(number, stat)}>-</button>
-            {stat_state}
-            <button className="increment plus" onClick={() => plusOne(number, stat)}>+</button>
+            <button className="increment minus" onClick={() => minusOne(player.number, stat)}>-</button>
+            {player[stat]}
+            <button className="increment plus" onClick={() => plusOne(player.number, stat)}>+</button>
         </td>
+        )}
+        </>
     );
 }

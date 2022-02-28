@@ -1,15 +1,11 @@
 [{
     "first":"Hank",
     "last":"Dingleman",
-    "number":"12",
-    "shots":0,
-    "turnovers":0
+    "number":"12"
 },
 {
     "first":"Tim",
     "last":"Wrigley",
-    "number":"44",
-    "shots":0,
-    "turnovers":0
+    "number":"44"
 }    
 ]

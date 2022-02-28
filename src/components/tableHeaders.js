@@ -8,7 +8,7 @@ export default function TableHeaders() {
     return (
         <>
             {options.map((option, i) =>
-            <th>
+            <th key={`header${i}`}>
                 {option}
             </th>
             )}
