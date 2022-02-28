@@ -1,11 +1,13 @@
 import React, { createContext, useState, useContext } from "react";
-import playerData from "/home/pi/code/shot_tracking_app/data/players.json";
+import playerData from "../../data/players.json";
+import statOptions from "../../data/statOptions.json";
 
 const PlayerContext = createContext();
 export const usePlayers = () => useContext(PlayerContext);
 
 export default function PlayerProvider ({ children }) {
     const [players, setPlayers] = useState(playerData);
+    const [stats, setStats] = useState(statOptions);
 
     const plusOne = (number, stat) => setPlayers(
         players.map(player => (player.number === number ? {...player, [stat]:player[stat]+1 } : player)));
@@ -27,9 +29,8 @@ export default function PlayerProvider ({ children }) {
     ]);
     
     return(
-        <PlayerContext.Provider value={{ players, setPlayers, plusOne, minusOne, addPlayer }}>
+        <PlayerContext.Provider value={{ players, setPlayers, stats, setStats, plusOne, minusOne, addPlayer }}>
             { children }
         </PlayerContext.Provider> 
     );
 };
-

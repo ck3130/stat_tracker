@@ -21,6 +21,7 @@ th, td {
 
 thead {
     background-color: goldenrod;
+    text-transform: capitalize;
 }
 
 button.increment {

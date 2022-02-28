@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 import "./App.css"
 import { usePlayers } from "./player-hooks.js";
 import StatCell from "./statsTableCell";

@@ -1,5 +1,6 @@
 import React from "react";
 import Player from "./player"
+import TableHeaders from "./tableHeaders";
 import "./App.css"
 
 export default function PlayerList () {
@@ -11,18 +12,7 @@ export default function PlayerList () {
             <table>
                 <thead>
                     <tr>
-                        <th>
-                            Player
-                        </th>
-                        <th>
-                            #
-                        </th>
-                        <th>
-                            Shots
-                        </th>
-                        <th>
-                            Turnovers
-                        </th>
+                        <TableHeaders />
                     </tr>
                 </thead>
                 <tbody>
