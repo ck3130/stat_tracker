@@ -17,13 +17,15 @@ export default function PlayerProvider ({ children }) {
     );
 
     const addStatToPlayers = () => setPlayers(
-        players.map(player => ({...player, ...statObjBuilder()}))
+        players.map(player => ({...player, ...statObjBuilder(player)}))
     )
 
-    const statObjBuilder = () => {
+    const statObjBuilder = (player) => {
         const statObj = {}
         for (let stat of stats) {
-        statObj[stat] = 0
+        if (!player[stat]) {
+            statObj[stat]=0
+        }
     } return statObj
 };
 
