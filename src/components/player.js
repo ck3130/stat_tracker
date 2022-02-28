@@ -4,8 +4,8 @@ import { usePlayers } from "./player-hooks.js";
 import StatCell from "./statsTableCell";
 
 export default function Player() {
-    const { players, addStatToPlayers } = usePlayers();
-
+    const { players } = usePlayers();
+    
     return (
         <>
         {players.map((player, i) => 
