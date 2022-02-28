@@ -12,10 +12,22 @@ export default function PlayerProvider ({ children }) {
     
     const minusOne = (number, stat) => setPlayers(
         players.map(player => (player.number === number ? {...player, [stat]:player[stat]-1} : player))
-    )
+    );
+
+    const addPlayer = (first, last, number) =>
+    setPlayers([
+        ...players,
+        {
+            first,
+            last,
+            number,
+            shots:0,
+            turnovers:0
+        }
+    ]);
     
     return(
-        <PlayerContext.Provider value={{ players, setPlayers, plusOne, minusOne }}>
+        <PlayerContext.Provider value={{ players, setPlayers, plusOne, minusOne, addPlayer }}>
             { children }
         </PlayerContext.Provider> 
     );

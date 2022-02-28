@@ -8,12 +8,12 @@ body {
 }
 
 table {
-    border: 1px solid black;
+    border: .1em solid black;
     border-collapse: collapse;
 }
 
 th, td {
-    border: 1px solid black;
+    border: .1em solid black;
     padding: .2em .7em;
     text-align: left;
     vertical-align: center;
@@ -26,12 +26,26 @@ thead {
 button.increment {
     border: 1px black solid;
     color: white;
-    border-radius: 2px;
+    border-radius: .3em;
     font-size:75%;
     font-weight: bold;
     line-height: 0%;
     height: 1.2em;
     width: 2.5em;
+}
+
+button.submitNewPlayer {
+    background-color: goldenrod;
+    color:black;
+    border: .1em solid black;
+    border-radius: .3em;
+    width: 4em;
+    height:2em;
+    margin-left:9.5em;
+}
+
+button.submitNewPlayer:hover {
+    background-color: darkgoldenrod;
 }
 
 button.minus {
@@ -49,4 +63,25 @@ button.plus:hover {
 
 button.minus:hover {
     background-color: darkred;
+}
+
+form.addPlayerForm {
+    border:2pt solid lightgray;
+    width: 31em;
+    font-size: 75%;
+    
+}
+
+form>label {
+    float: left;
+    width: 7em;
+    text-align: right;
+    color:grey;
+    margin:1.1em 0 0 0;
+}
+
+form>input {
+    margin-left: 1em;
+    margin-bottom: .5em;
+    width:auto
 }
