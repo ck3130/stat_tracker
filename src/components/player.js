@@ -12,7 +12,7 @@ export default function Player() {
             <tr key={i}>
                 <td>{player.first} {player.last}</td>
                 <td>{player.number}</td>
-                <StatCell player={player} />
+                <StatCell key={`player${i}`} player={player} />
             </tr>
         )}
         </>
