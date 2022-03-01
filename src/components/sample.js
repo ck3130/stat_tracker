@@ -1,13 +1,19 @@
-const x = ['a','b'];
-const y = ['c','d'];
+// SCRATCH PAD FOR PLAYING WITH AND TESTING JS
 
-const z = [];
-
-for(let item1 of x){
-    for(let item2 of y){
-        z.push(item1+item2)
-    }
+const o =[{
+    "stat":"shots",
+    "available":true
+},
+{
+    "stat":"turnovers",
+    "available":true
+},
+{
+    "stat":"hits",
+    "available":true
 }
+]
 
-console.log(z)
+const names = o.map(i => i["stat"])
 
+console.log(names)

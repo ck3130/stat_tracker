@@ -6,7 +6,7 @@ const PlayerContext = createContext();
 export const usePlayers = () => useContext(PlayerContext);
 
 export default function PlayerProvider ({ children }) {
-    const [players, setPlayers] = useState([]);
+    const [players, setPlayers] = useState(playerData);
     const [stats, setStats] = useState(statOptions);
 
     const plusOne = (number, stat) => setPlayers(
@@ -23,8 +23,8 @@ export default function PlayerProvider ({ children }) {
     const statObjBuilder = (player) => {
         const statObj = {}
         for (let stat of stats) {
-        if (!player[stat]) {
-            statObj[stat]=0
+        if (!player[stat["stat"]]) {
+            statObj[stat["stat"]]=0
         }
     } return statObj
 };
@@ -44,9 +44,13 @@ export default function PlayerProvider ({ children }) {
     useEffect(() => {
         addStatToPlayers();
     }, [playerList]);
+
+    const toggleStats = (stat) => setStats(
+        stats.map( x => x.stat === stat ? {...x, "available":!x["available"]} : x)
+    );
     
     return(
-        <PlayerContext.Provider value={{ players, setPlayers, stats, setStats, plusOne, minusOne, addPlayer, addStatToPlayers }}>
+        <PlayerContext.Provider value={{ players, setPlayers, stats, setStats, plusOne, minusOne, addPlayer, addStatToPlayers, toggleStats }}>
             { children }
         </PlayerContext.Provider> 
     );

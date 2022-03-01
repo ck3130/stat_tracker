@@ -1,1 +1,13 @@
-["shots", "turnovers", "hits"]
+[{
+    "stat":"shots",
+    "available":true
+},
+{
+    "stat":"turnovers",
+    "available":true
+},
+{
+    "stat":"hits",
+    "available":true
+}
+]
