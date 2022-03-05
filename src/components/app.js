@@ -4,6 +4,7 @@ import AddPlayerForm from "./addPlayerForm";
 import StatControlForm from "./statControlForm.js";
 import "./App.css";
 import ErrorBoundry from "./errorBoundry.js";
+import ShotGraph from "./shotChart.js";
 
 export default function App() {
     return (
@@ -21,6 +22,9 @@ export default function App() {
             <div>
                 <ErrorBoundry>
                     <StatControlForm />
+                </ErrorBoundry>
+                <ErrorBoundry>
+                    <ShotGraph />
                 </ErrorBoundry>
             </div>
         </div>

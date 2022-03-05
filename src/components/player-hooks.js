@@ -6,7 +6,7 @@ const PlayerContext = createContext();
 export const usePlayers = () => useContext(PlayerContext);
 
 export default function PlayerProvider ({ children }) {
-    const [players, setPlayers] = useState([]);
+    const [players, setPlayers] = useState(playerData);
     const [stats, setStats] = useState(statOptions);
 
     const plusOne = (number, stat) => setPlayers(
