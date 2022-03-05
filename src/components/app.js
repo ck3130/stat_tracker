@@ -3,18 +3,25 @@ import PlayerList from "./playerList.js";
 import AddPlayerForm from "./addPlayerForm";
 import StatControlForm from "./statControlForm.js";
 import "./App.css";
+import ErrorBoundry from "./errorBoundry.js";
 
 export default function App() {
     return (
         <div>
             <div>
-                <PlayerList />
+                <ErrorBoundry>
+                 <PlayerList />
+                </ErrorBoundry>
             </div>
             <div>
-                <AddPlayerForm />
+                <ErrorBoundry>
+                    <AddPlayerForm />
+                </ErrorBoundry>
             </div>
             <div>
-                <StatControlForm />
+                <ErrorBoundry>
+                    <StatControlForm />
+                </ErrorBoundry>
             </div>
         </div>
     );

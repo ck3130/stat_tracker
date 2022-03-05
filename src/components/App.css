@@ -160,3 +160,10 @@ input:checked + .slider:before {
     margin:1.1em 0 0 0;
     text-transform: capitalize;
 }
+
+.error {
+    background-color: darkorange;
+    width:50%;
+    border: solid black .1em;
+    color:crimson;
+}
